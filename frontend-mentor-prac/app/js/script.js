@@ -4,7 +4,6 @@ const header = document.querySelector('.header');
 const fadeElements = document.querySelectorAll('.has-fade');
 
 btnHamburger.addEventListener('click', function() {
-  console.log('toggle hamburger');
   if(header.classList.contains('open')) { // close
     fadeElements.forEach(function(element) {
       element.classList.remove('fade-in');
@@ -19,3 +18,15 @@ btnHamburger.addEventListener('click', function() {
   header.classList.toggle('open');
   body.classList.toggle('noscroll');
 })
+
+
+window.matchMedia('(min-width: 64em)').onchange = function (event) {
+	if(header.classList.contains('open')) { // close
+    fadeElements.forEach(function(element) {
+      element.classList.remove('fade-in');
+      element.classList.add('fade-out');
+    });
+    header.classList.remove('open')
+    header.classList.remove('noscroll')
+  } 
+};
