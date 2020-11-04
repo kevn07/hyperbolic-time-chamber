@@ -2,25 +2,18 @@ class countDownTimer {
   constructor( _countdownTime, _elementId) {
     this.countdownTime = _countdownTime || null;
     this.elementId = _elementId || null;
-    this.interval = null
-  }
-
-  setCountdown( _countdownTime ) {
-    this.countdownTime = _countdownTime;
-  }
-
-  setElementId( _elementId ) {
-    this.elementId = _elementId;
+    this.interval = 0
+    this.countdownMap = new Map
   }
 
   startCountdown() {
     if (!this.checkValues()) {
       return
     }
-    this.interval = setInterval(() => {this.countdown()}, 1000)
+    this.interval = setInterval(() => {this.tick()}, 1000)
   }
 
-  countdown() {
+  tick() {
     const now = new Date().getTime();
     const difference = this.countdownTime - now;
     const days = Math.floor(difference / (1000*60*60*24));
@@ -28,10 +21,15 @@ class countDownTimer {
     const minutes = Math.floor((difference % (1000*60*60)) / (1000*60));
     const seconds = Math.floor((difference % (1000*60)) / 1000);
     const countdownString = `${days}d ${hours}h ${minutes}m ${seconds}s`
-    document.getElementById(this.elementId).innerHTML = countdownString;
+    this.countdownMap.set("days", days);
+    this.countdownMap.set("hours", hours);
+    this.countdownMap.set("minutes", minutes);
+    this.countdownMap.set("seconds", seconds);
+    console.log(this.countdownMap)
     if (difference < 0) {
-      this.stopCountdown()
+      console.log('done')
     }
+    // return this.countdownMap
   }
 
   stopCountdown() {
