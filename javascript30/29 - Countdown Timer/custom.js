@@ -1,7 +1,7 @@
 const buttons = document.querySelectorAll('[data-time]')
-const pauseResetButton = document.querySelector('.timer__reset')
+const pauseResetButton = document.querySelector('#timer__reset')
 const timerDisplay = document.querySelector('.display__time-left');
-const startButton = document.querySelector('.timer__start')
+const startButton = document.querySelector('#timer__start')
 
 class timerClass {
   constructor(_seconds, _timeHandler) {

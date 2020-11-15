@@ -36,6 +36,7 @@ body {
 
 .timer__controls > * {
   flex: 1;
+  border-radius: 5px
 }
 
 .timer__controls form {
@@ -43,11 +44,30 @@ body {
   display: flex;
 }
 
-.timer__controls input {
+.timer__input input {
+  width:100%;
   flex: 1;
   border: 0;
-  padding: 2rem;
+  padding: 1rem;
+  
 }
+
+.timer__input input:focus {
+  outline: none;
+}
+
+.timer__input {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.timer__input > * {
+  flex: 1;
+  border-radius: 5px
+}
+
 
 .timer__button {
   background: none;
@@ -67,6 +87,10 @@ body {
 .timer__button:focus {
   background: rgba(0,0,0,0.2);
   outline: 0;
+}
+
+#custom {
+  background: white;
 }
 
 .display {
