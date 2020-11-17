@@ -45,5 +45,5 @@ class countDownTimer {
   }
 }
 
-let timer = countDownTimer(new Date("Nov 2, 2021 22:47:50").getTime(), "demo")
+let timer = new countDownTimer(new Date("Nov 2, 2021 22:47:50").getTime(), "demo")
 timer.startCountdown();
