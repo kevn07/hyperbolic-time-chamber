@@ -63,7 +63,7 @@ export function getUniqueCount(obj) {
  * @param top 
  * @returns 
  */
-export function getTopAcitivty(obj, top) {
+export function getTopActivity(obj, top) {
   if (!obj) {
     throw new Error('getTopActivity: obj passed is invalid')
   }

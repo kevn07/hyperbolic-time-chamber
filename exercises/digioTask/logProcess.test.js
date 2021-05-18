@@ -1,4 +1,4 @@
-import {processLogByLine, getUniqueCount, getTopAcitivty, getTopNumber} from './logProcessor'
+import {processLogByLine, getUniqueCount, getTopActivity, getTopNumber} from './logProcessor'
 
 
 const filePath = 
@@ -9,7 +9,7 @@ describe('Testing Log Processor', () => {
   })
   it('return top 3 ip addresses', async () => {
     const processedLog = await processLogByLine('./programming-task-example-data.log')
-    expect(getTopAcitivty(processedLog.ipCount, 3)).toStrictEqual([
+    expect(getTopActivity(processedLog.ipCount, 3)).toStrictEqual([
       { key: '168.41.191.40', count: 4 },
       { key: '177.71.128.21', count: 3 },
       { key: '50.112.00.11', count: 3 },
@@ -19,7 +19,7 @@ describe('Testing Log Processor', () => {
   })
   it('return top 3 URLs', async () => {
     const processedLog = await processLogByLine('./programming-task-example-data.log')
-    expect(getTopAcitivty(processedLog.urlCount, 3)).toStrictEqual([
+    expect(getTopActivity(processedLog.urlCount, 3)).toStrictEqual([
       { key: '/docs/manage-websites/', count: 2 },
       { key: '/intranet-analytics/', count: 1 },
       { key: 'http://example.net/faq/', count: 1 },
@@ -56,6 +56,6 @@ describe('Testing Log Processor', () => {
     expect(getUniqueCount({}, 3)).toBe(0);
   })
   it('throw error retrieve top activity', () => {
-    expect(() => getTopAcitivty()).toThrow('getTopActivity: obj passed is invalid')
+    expect(() => getTopActivity()).toThrow('getTopActivity: obj passed is invalid')
   })
 })
