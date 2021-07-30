@@ -1,7 +1,6 @@
 import {processLogByLine, getUniqueCount, getTopActivity, getTopNumber} from './logProcessor'
 
 
-const filePath = 
 describe('Testing Log Processor', () => {
   it('return number of unique ip addresses', async () => {
     const processedLog = await processLogByLine('./programming-task-example-data.log')
