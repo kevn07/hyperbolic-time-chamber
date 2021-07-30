@@ -1,0 +1,11 @@
+{
+  "name": "playground",
+  "version": "1.0.0",
+  "description": "playground node environment",
+  "main": "index.js",
+  "scripts": {
+    "test": "\"echo kevin\""
+  },
+  "author": "Kevin He",
+  "license": "ISC"
+}
